@@ -19,7 +19,6 @@ class coche {
     }
 
 }
-
     $miCoche = new coche();
     $miCoche-> marca = "Toyota";
     $miCoche->modelo = "corolla";
@@ -40,6 +39,60 @@ class coche {
     multipicarPorDos();
     echo $numero;
 
+
+    // casteo o conversion explicita 
+
+    $num1 ="100";
+    $num2 = 200;
+    $num3 = "hello";
+
+
+
+    $int1 = (int)$num1;
+    $int2 = (int)$num2;
+    $int3 = (int)$num3;
+
+
+
+    echo "int1: " . $int1; // salida: int1 : 100
+    echo "<br>int2: " . $int2; // salida: int2: 200
+    echo "<br>int3: " . $int3; //salida int3: 0
+
+
+
+    // casteo a String
+
+    $num1 =100;
+    $num2 =200.5;
+    $num3 = true;
+
+
+
+    $string1 = (string)$num1;
+    $string2 = (string)$num2;
+    $string3 = (string)$num3;
+
+    echo "string1: " . $string1; // salida: string1:100
+    echo "string2: " . $string2; // salida : string2: 200.5
+    echo "string3: " . $string3; // salida : string3: 1 , por que es true y vale 1 en false vale 0
+
+    // declaramos las variables constantes como define 
+
+
+    define ('BD_SERVIDOR', 'localhost');
+    define ('BD_USUARIO', 'elon');
+    define ('BD_CLAVE', 'argentinacampeon2022');
+    define ('BD_NOMBRE', 'cursos');
+
+
+    $conn = mysqli_connect (BD_SERVUDIR, BD_USUARIO, BD_CLAVE, BD_NOMBRE);
+    
+    if (!$conn){
+        die ("error de conexion: " . mysqli_connect_error());
+
+    }
+    echo "conexion exitosa";
+    mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
